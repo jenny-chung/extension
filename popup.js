@@ -9,10 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const frequency = parseInt(document.getElementById("frequency").value);
         saveFrequency(frequency);
         setReminder(frequency);
+        alert("Reminder set.");
     });
 
     cancelBtn.addEventListener("click", function() {
         cancelReminder();
+        alert("Reminder canceled.");
     });
   
     function saveFrequency(frequency) {
@@ -23,12 +25,15 @@ document.addEventListener("DOMContentLoaded", function() {
   
     function setReminder(frequency) {
         chrome.alarms.create(alarmName, { periodInMinutes: frequency });
-        console.log("Reminder set for every", frequency, "minutes.");
+        const today = new Date();
+        const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        console.log("Reminder set for every", frequency, "minutes", "at", date + ' ' + time);
     }
 
     function cancelReminder() {
         chrome.alarms.clear(alarmName);
-        console.log("Reminder successfully canceled.");
+        console.log("Reminder", alarmName, "successfully canceled.");
     }
 
     // Check if the user has already set the frequency
@@ -37,28 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (frequency) {
             document.getElementById("frequency").value = frequency;
             setReminder(frequency);
-        }
-    });
-
-    function showNotification() {
-        const options = {
-            type: "basic",
-            iconUrl: "icon.png",
-            title: "Time to take a break!",
-            message: "Get up for a break and drink some water",
-        };
-    
-        // Create a notification popup
-        chrome.notifications.create(options, function(notificationId) {
-            console.log("Notification created:", notificationId);
-        });
-    }
-
-    // Listen for alarm events
-    chrome.alarms.onAlarm.addListener(function(alarm) {
-        console.log("Got an alarm!", alarm);
-        if (alarm.name == alarmName) {
-             showNotification();
         }
     });
 

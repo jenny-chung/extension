@@ -1,12 +1,16 @@
 {
-    "manifest_version": 2,
-    "name": "water",
+    "manifest_version": 3,
+    "name": "water you doing?",
     "version": "1.0.0",
-    "description": "Google Chrome extension that reminds you to take breaks and most importantly, drink water",
+    "description": "An extension that reminds you to take breaks and stay hydrated!",
     "author": "Jenny Chung",
     "permissions": ["notifications", "alarms", "storage"],
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
     }
+    
 }
