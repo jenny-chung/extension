@@ -1,5 +1,5 @@
 # extension
 A Google Chrome extension that reminds you to take breaks from the screen and stay hydrated!
 
-![alt text](reminder.png "chrome reminder extension popup notification")
-![alt text](extension.png "chrome reminder extension")
+![chrome reminder extension notification](reminder.png "chrome reminder extension popup notification")
+![chrome reminder extension](extension.gif "chrome reminder extension (sped up)")
