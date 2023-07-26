@@ -1,0 +1,60 @@
+body {
+    width: 350px;
+    height: 200px;
+    font-family: "Quicksand", "Poppins", "Rubik", sans-serif;
+    font-size: 85%;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .header-logo {
+      cursor: pointer;
+      height: 60px;
+      width: auto;
+      display: inline-block;
+  }
+  .text-frame {
+    margin-left: 10px;
+  }
+  .primary-section {
+    background-color: #EDF6F9;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 16px 16px;
+    border: 3px solid #c9e6ec;
+    border-radius: 6px;
+  }
+  .btn-panel {
+    margin-top: 16px;
+  }
+  #frequency {
+    border: 2px solid #208AAE;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  button {
+    font-family: inherit;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  #saveBtn {
+    border: 2px solid #208AAE;
+    background-color: #40bbe4;
+  }
+  #saveBtn:hover {     
+    background-color: #90cee3;    
+  }
+  #cancelBtn{
+    margin-left: 16px;
+    background-color: #8C86AA;
+  }
+  #cancelBtn:hover {
+    background-color: #b7b1d6;
+  }
+  #titletext {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+  } 
